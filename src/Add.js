@@ -1,3 +1,4 @@
+// import Content from './Content';
 const Add = ({handleAdd}) =>{
     return(
         <main>

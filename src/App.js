@@ -7,6 +7,7 @@ import Add from './Add';
 
 function App() {
   const [updateData, setUpdateData] = useState([]);
+  // const [newItem, setNewItem] = useState([]);
   const getUrl = "http://nexifytw.mynetgear.com:45000/api/Record/GetRecords"
   
   const update = fetch(getUrl)
@@ -25,17 +26,21 @@ function App() {
     })
   }
   
-  const handleAdd = () => {
-    console.log("ADD")
+  const handleAdd = (e) => {
+    e.preventDefault();
+    const id = updateData.length ? updateData[updateData.length -1].id - 1 : 1;
+    const defaultItem  = {id, Name: '', DateOfBirth: '2023-01-20', Salary: 50000, Address: '', updateData};
+    const listItems = [...updateData, defaultItem];
+    setUpdateData(listItems);
   }
   
   return (
     <div className="App">
       <Add 
         handleAdd={handleAdd}
-      />
-      <Update 
         updateData={updateData}
+      />
+      <Update
         handleUpdate={handleUpdate}
       />    
       <table>
