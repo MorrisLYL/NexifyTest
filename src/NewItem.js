@@ -1,12 +1,55 @@
-const NewItem =({newItem}) =>{
+const NewItem = ({newItem, setNewItem}) =>{
+
+    const handleName = index => e => {
+        var newArr = [...newItem]; 
+        newArr[index].Name = e.target.value;
+        setNewItem(newArr);
+      }
+
+    const handleDate = index => e => {
+        var newArr = [...newItem];
+        newArr[index].DateOfBirth = e.target.value;
+        setNewItem(newArr);
+    }
+
+    const handleSalary = index => e => {
+        var newArr = [...newItem];
+        newArr[index].Salary = e.target.value;
+        setNewItem(newArr);
+    }
+
+    const handleAdd = index => e =>{
+        var newArr = [...newItem];
+        newArr[index].Address = e.target.value;
+        setNewItem(newArr);
+    }    
+
+      
+
     return(
         <tbody>
-            {newItem.map((object, id) =>
-                <tr key={id}>
-                    <input className="name" type="text" value={object.Name}></input>
-                    <input className="birthday" type="date" value={object.DateOfBirth.slice(0, 10)}></input>
-                    <input className="salary" type="range" min="0" max="100000" value={object.Salary}></input>
-                    <input className="address" type="text" value={object.Address}></input>
+            {newItem.map((item, id)=>
+                <tr key={item.id}>
+                    <input
+                        className="name" type="text"
+                        value={item.Name}
+                        onChange={handleName(id)}
+                    />
+                    <input
+                        className="birthday" type="date"
+                        value={item.DateOfBirth}
+                        onChange={handleDate(id)}
+                    />
+                    <input
+                        className="salary" type="range"
+                        value={item.Salary}
+                        onChange={handleSalary(id)}
+                    />
+                    <input
+                        className="address" type="text"
+                        value={item.Address}
+                        onChange={handleAdd(id)}
+                    />                                                            
                 </tr>
             )}
         </tbody>

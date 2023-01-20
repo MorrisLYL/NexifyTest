@@ -1,6 +1,6 @@
-const Save = () =>{
+const Save = ({handleSave}) =>{
     return(
-        <p>c</p>
+        <button onClick={handleSave}>Save</button>
     )
 };
 
