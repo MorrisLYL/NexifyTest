@@ -2,7 +2,7 @@
 const Add = ({handleAdd}) =>{
     return(
         <main>
-            <button onClick={handleAdd}>Add</button>
+            <button onClick={handleAdd} className="add">Add</button>
         </main>
     )
 };

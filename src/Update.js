@@ -1,7 +1,7 @@
 const Update = ({handleUpdate}) => {
     return(
         <main>
-            <button onClick={handleUpdate}>Update</button>  
+            <button onClick={handleUpdate} className="update">Update</button>  
         </main>
     )
 }

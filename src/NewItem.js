@@ -30,26 +30,34 @@ const NewItem = ({newItem, setNewItem}) =>{
         <tbody>
             {newItem.map((item, id)=>
                 <tr key={item.id}>
-                    <input
-                        className="name" type="text"
-                        value={item.Name}
-                        onChange={handleName(id)}
-                    />
-                    <input
-                        className="birthday" type="date"
-                        value={item.DateOfBirth}
-                        onChange={handleDate(id)}
-                    />
-                    <input
-                        className="salary" type="range"
-                        value={item.Salary}
-                        onChange={handleSalary(id)}
-                    />
-                    <input
-                        className="address" type="text"
-                        value={item.Address}
-                        onChange={handleAdd(id)}
-                    />                                                            
+                    <td>
+                        <input
+                            className="name" type="text"
+                            value={item.Name}
+                            onChange={handleName(id)}
+                        />
+                    </td>
+                    <td>
+                        <input
+                            className="birthday" type="date"
+                            value={item.DateOfBirth}
+                            onChange={handleDate(id)}
+                        />
+                    </td>
+                    <td>
+                        <input
+                            className="salary" type="range"
+                            value={item.Salary}
+                            onChange={handleSalary(id)}
+                        />
+                    </td>
+                    <td>
+                        <input
+                            className="address" type="text"
+                            value={item.Address}
+                            onChange={handleAdd(id)}
+                        />  
+                    </td>                                  
                 </tr>
             )}
         </tbody>
